@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Particle Atlas Social Preview</title>
+  <desc id="desc">A dark futuristic preview image for a website about subatomic physics particles and the Standard Model.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="55%" stop-color="#071827"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="text" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#67e8f9"/>
+      <stop offset="55%" stop-color="#93c5fd"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="860" cy="270" r="135" fill="none" stroke="#67e8f9" stroke-opacity="0.55" stroke-width="2"/>
+  <circle cx="860" cy="270" r="190" fill="none" stroke="#93c5fd" stroke-opacity="0.35" stroke-width="2"/>
+  <circle cx="860" cy="270" r="245" fill="none" stroke="#f59e0b" stroke-opacity="0.22" stroke-width="2"/>
+  <circle cx="860" cy="270" r="32" fill="#f8fafc"/>
+  <circle cx="995" cy="270" r="10" fill="#67e8f9"/>
+  <circle cx="860" cy="80" r="10" fill="#f59e0b"/>
+  <circle cx="686" cy="346" r="10" fill="#34d399"/>
+  <text x="100" y="235" fill="#67e8f9" font-family="Arial, sans-serif" font-size="22" letter-spacing="8">PARTICLE ATLAS</text>
+  <text x="100" y="320" fill="url(#text)" font-family="Arial, sans-serif" font-size="72" font-weight="700">Subatomic</text>
+  <text x="100" y="398" fill="#ffffff" font-family="Arial, sans-serif" font-size="72" font-weight="700">Physics Particles</text>
+  <text x="100" y="468" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="30">Quarks, leptons, bosons, and the Standard Model</text>
+</svg>

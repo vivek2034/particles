@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Standard Model Explained | Particle Physics Article</title>
+  <meta name="description" content="Read a detailed educational article explaining the Standard Model of particle physics, including quarks, leptons, bosons, the Higgs boson, and its limits.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="Particle Atlas">
+  <meta name="theme-color" content="#020617">
+  <meta name="application-name" content="Particle Atlas">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="canonical" href="https://vivek2034.github.io/particles/articles.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Standard Model Explained | Particle Physics Article">
+  <meta property="og:description" content="Learn how the Standard Model organizes matter particles, force carriers, the Higgs boson, and the unresolved mysteries of particle physics.">
+  <meta property="og:site_name" content="Particle Atlas">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://vivek2034.github.io/particles/articles.html">
+  <meta property="og:image" content="social-preview.svg">
+  <meta property="og:image:alt" content="Particle Atlas article preview for the Standard Model of particle physics">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Standard Model Explained | Particle Atlas">
+  <meta name="twitter:description" content="A detailed beginner-friendly article on quarks, leptons, bosons, the Higgs boson, and the limits of the Standard Model.">
+  <meta name="twitter:image" content="social-preview.svg">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preload" as="image" href="social-preview.svg">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Understanding the Standard Model",
+      "description": "A detailed educational article on the Standard Model of particle physics, including quarks, leptons, bosons, and the Higgs boson.",
+      "isAccessibleForFree": true,
+      "articleSection": "Particle Physics",
+      "keywords": ["Standard Model", "particle physics", "quarks", "leptons", "bosons", "Higgs boson"],
+      "author": {
+        "@type": "Organization",
+        "name": "Particle Atlas"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Particle Atlas"
+      },
+      "dateModified": "2026-03-25",
+      "inLanguage": "en",
+      "about": [
+        { "@type": "Thing", "name": "Standard Model" },
+        { "@type": "Thing", "name": "Particle Physics" },
+        { "@type": "Thing", "name": "Higgs boson" }
+      ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why doesn't the Standard Model include gravity?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Gravity is described extremely well at large scales by general relativity, but physicists still do not have a fully accepted quantum theory of gravity that fits naturally into the Standard Model framework."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is dark matter still a mystery?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Astronomical evidence strongly suggests that dark matter exists, but none of the known Standard Model particles fully match the properties needed to explain it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What keeps the Standard Model so valuable?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It remains one of the most precisely tested theories in science, accurately predicting a huge range of particle behavior in experiments across decades."
+          }
+        }
+      ]
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            space: "#050816",
+            nebula: "#0f172a",
+            plasma: "#67e8f9",
+            aurora: "#22d3ee",
+            flare: "#f59e0b"
+          },
+          fontFamily: {
+            display: ["Space Grotesk", "sans-serif"],
+            body: ["IBM Plex Sans", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(34, 211, 238, 0.10), transparent 25%),
+        linear-gradient(180deg, #020617 0%, #07111f 55%, #020617 100%);
+      cursor: none;
+    }
+
+    img,
+    canvas,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    * {
+      min-width: 0;
+    }
+
+    body.loaded .site-loader {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 500ms ease, visibility 500ms ease;
+    }
+
+    .article-shell {
+      background: rgba(15, 23, 42, 0.78);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(148, 163, 184, 0.14);
+    }
+
+    .editorial-card {
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.82), rgba(10, 15, 29, 0.86));
+      border: 1px solid rgba(103, 232, 249, 0.12);
+      backdrop-filter: blur(14px);
+    }
+
+    .visual-stage {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(103, 232, 249, 0.14);
+      background:
+        radial-gradient(circle at 50% 50%, rgba(34, 211, 238, 0.12), transparent 40%),
+        linear-gradient(180deg, rgba(15, 23, 42, 0.96), rgba(2, 6, 23, 0.96));
+    }
+
+    .article-shell,
+    .visual-stage,
+    a {
+      transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+    }
+
+    .article-shell:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(8, 47, 73, 0.2);
+    }
+
+    .insight-chip {
+      border: 1px solid rgba(103, 232, 249, 0.15);
+      background: rgba(8, 47, 73, 0.2);
+    }
+
+    .timeline-line {
+      position: absolute;
+      left: 1rem;
+      top: 0.5rem;
+      bottom: 0.5rem;
+      width: 1px;
+      background: linear-gradient(180deg, rgba(103, 232, 249, 0.55), rgba(245, 158, 11, 0.15));
+    }
+
+    .timeline-dot {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      height: 2rem;
+      width: 2rem;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      border: 1px solid rgba(103, 232, 249, 0.3);
+      background: rgba(15, 23, 42, 0.95);
+      color: #67e8f9;
+      box-shadow: 0 0 0 6px rgba(8, 47, 73, 0.25);
+    }
+
+    details summary {
+      list-style: none;
+    }
+
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .article-prose p {
+      margin-top: 1.25rem;
+      line-height: 2;
+      color: rgb(203 213 225);
+    }
+
+    .article-prose strong {
+      color: white;
+    }
+
+    .custom-cursor,
+    .custom-cursor-trail {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 60;
+      pointer-events: none;
+      border-radius: 9999px;
+      mix-blend-mode: screen;
+      transform: translate(-50%, -50%);
+    }
+
+    .custom-cursor {
+      width: 14px;
+      height: 14px;
+      background: radial-gradient(circle, rgba(255,255,255,0.95) 0%, rgba(103,232,249,0.9) 45%, rgba(103,232,249,0.08) 100%);
+      box-shadow: 0 0 22px rgba(103, 232, 249, 0.55);
+    }
+
+    .custom-cursor-trail {
+      width: 52px;
+      height: 52px;
+      border: 1px solid rgba(103, 232, 249, 0.35);
+      background: radial-gradient(circle, rgba(103,232,249,0.08) 0%, rgba(103,232,249,0.02) 55%, transparent 70%);
+      transition: width 180ms ease, height 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .cursor-active .custom-cursor-trail {
+      width: 82px;
+      height: 82px;
+      border-color: rgba(245, 158, 11, 0.4);
+      background: radial-gradient(circle, rgba(245,158,11,0.08) 0%, rgba(245,158,11,0.02) 55%, transparent 70%);
+    }
+
+    .site-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 70;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at center, rgba(34, 211, 238, 0.16), transparent 20%),
+        linear-gradient(180deg, #020617, #020617);
+    }
+
+    .loader-core {
+      position: relative;
+      width: 7rem;
+      height: 7rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(103, 232, 249, 0.18);
+      box-shadow: 0 0 40px rgba(103, 232, 249, 0.18);
+    }
+
+    .loader-core::before,
+    .loader-core::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 9999px;
+      border: 2px solid transparent;
+      border-top-color: rgba(103, 232, 249, 0.9);
+      animation: haloSpin 1.5s linear infinite;
+    }
+
+    .loader-core::after {
+      inset: 0.9rem;
+      border-top-color: rgba(245, 158, 11, 0.85);
+      animation-duration: 1s;
+      animation-direction: reverse;
+    }
+
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 65;
+      height: 3px;
+      width: 0;
+      background: linear-gradient(90deg, #67e8f9, #22d3ee, #f59e0b);
+      box-shadow: 0 0 18px rgba(103, 232, 249, 0.45);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px) scale(0.98);
+      transition: opacity 700ms ease, transform 700ms ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .mobile-menu {
+      transition: opacity 220ms ease, transform 220ms ease, visibility 220ms ease;
+    }
+
+    .mobile-menu.is-open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    @keyframes haloSpin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @media (pointer: coarse) {
+      body {
+        cursor: auto;
+      }
+
+      .custom-cursor,
+      .custom-cursor-trail {
+        display: none;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .desktop-nav {
+        display: none;
+      }
+
+      .mobile-menu {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-12px);
+      }
+    }
+
+    @media (min-width: 768px) {
+      .mobile-toggle,
+      .mobile-menu {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body class="font-body text-slate-100">
+  <div class="site-loader">
+    <div class="text-center">
+      <div class="loader-core mx-auto"></div>
+      <p class="mt-6 text-xs uppercase tracking-[0.4em] text-cyan-300">Loading Standard Model</p>
+    </div>
+  </div>
+  <div class="progress-bar" id="progress-bar" aria-hidden="true"></div>
+  <div class="custom-cursor-trail" id="cursor-trail" aria-hidden="true"></div>
+  <div class="custom-cursor" id="cursor-dot" aria-hidden="true"></div>
+  <header class="border-b border-white/10 bg-slate-950/80 backdrop-blur">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8" aria-label="Primary navigation">
+      <a href="index.html" class="font-display text-xl font-bold tracking-wide text-plasma">Particle Atlas</a>
+      <div class="desktop-nav flex items-center gap-3 text-sm font-medium text-slate-200 md:gap-6">
+        <a href="index.html" class="transition hover:text-plasma">Home</a>
+        <a href="quarks.html" class="transition hover:text-plasma">Quarks</a>
+        <a href="leptons.html" class="transition hover:text-plasma">Leptons</a>
+        <a href="bosons.html" class="transition hover:text-plasma">Bosons</a>
+        <a href="index.html#families" class="transition hover:text-plasma">Families</a>
+        <a href="articles.html" class="rounded-full border border-cyan-400/40 px-4 py-2 transition hover:border-cyan-300 hover:bg-cyan-400/10 hover:text-cyan-200">Articles</a>
+      </div>
+      <button class="mobile-toggle rounded-full border border-cyan-300/20 px-4 py-2 text-sm text-cyan-200" type="button" data-menu-toggle="mobile-menu-article" aria-expanded="false" aria-controls="mobile-menu-article">Menu</button>
+    </nav>
+    <div id="mobile-menu-article" class="mobile-menu border-t border-white/10 bg-slate-950/95 px-6 py-4">
+      <div class="flex flex-col gap-3 text-sm font-medium text-slate-200">
+        <a href="index.html" class="transition hover:text-plasma">Home</a>
+        <a href="quarks.html" class="transition hover:text-plasma">Quarks</a>
+        <a href="leptons.html" class="transition hover:text-plasma">Leptons</a>
+        <a href="bosons.html" class="transition hover:text-plasma">Bosons</a>
+        <a href="index.html#families" class="transition hover:text-plasma">Families</a>
+        <a href="articles.html" class="transition hover:text-plasma">Articles</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-5xl px-6 py-16 lg:px-8">
+    <section class="article-shell reveal rounded-[2rem] p-8 shadow-2xl shadow-cyan-950/20 sm:p-10" data-parallax>
+      <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+        <div class="reveal">
+          <p class="text-sm uppercase tracking-[0.3em] text-cyan-300">Featured Article</p>
+          <h1 class="mt-3 font-display text-4xl font-bold text-white sm:text-5xl">Understanding the Standard Model</h1>
+          <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-300">
+            The Standard Model is the central framework physicists use to describe the smallest known building blocks of matter and the forces that act on them. It does not explain everything in the universe, but it is one of the most successful scientific theories ever created because its predictions have been confirmed again and again in experiments.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <span class="insight-chip rounded-full px-4 py-2 text-sm text-cyan-200">Reading time: 4 min</span>
+            <span class="insight-chip rounded-full px-4 py-2 text-sm text-cyan-200">Level: Beginner to Intermediate</span>
+            <span class="insight-chip rounded-full px-4 py-2 text-sm text-cyan-200">Theme: Matter, Forces, Symmetry</span>
+          </div>
+        </div>
+
+        <aside class="reveal rounded-3xl border border-cyan-300/15 bg-slate-900/55 p-5" data-tilt>
+          <p class="text-sm uppercase tracking-[0.3em] text-cyan-300">3D Field View</p>
+          <div id="three-article-scene" class="visual-stage mt-4 h-72 rounded-2xl"></div>
+          <p class="mt-4 text-sm leading-7 text-slate-300">
+            This animated model represents a simplified atomic-style system with orbiting particles to reinforce how the Standard Model organizes matter and interactions.
+          </p>
+        </aside>
+      </div>
+
+      <div class="mt-10 grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
+        <aside class="space-y-6">
+          <section class="editorial-card reveal rounded-3xl p-6" data-tilt>
+            <p class="text-sm uppercase tracking-[0.3em] text-cyan-300">Quick Map</p>
+            <nav class="mt-5 space-y-3 text-sm text-slate-300">
+              <a href="#matter-framework" class="block transition hover:text-cyan-200">1. Matter Particles</a>
+              <a href="#three-generations" class="block transition hover:text-cyan-200">2. Three Generations</a>
+              <a href="#force-carriers" class="block transition hover:text-cyan-200">3. Force Carriers</a>
+              <a href="#higgs-role" class="block transition hover:text-cyan-200">4. The Higgs Role</a>
+              <a href="#model-limits" class="block transition hover:text-cyan-200">5. Limits of the Model</a>
+            </nav>
+          </section>
+
+          <section class="editorial-card reveal rounded-3xl p-6" data-tilt>
+            <p class="text-sm uppercase tracking-[0.3em] text-cyan-300">At A Glance</p>
+            <div class="mt-5 grid gap-4">
+              <div class="rounded-2xl border border-white/8 bg-slate-950/45 p-4">
+                <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Matter Particles</p>
+                <p class="mt-2 font-display text-3xl text-white">12</p>
+                <p class="mt-2 text-sm text-slate-300">Six quarks and six leptons.</p>
+              </div>
+              <div class="rounded-2xl border border-white/8 bg-slate-950/45 p-4">
+                <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Force Bosons</p>
+                <p class="mt-2 font-display text-3xl text-white">4</p>
+                <p class="mt-2 text-sm text-slate-300">Photon, gluon, W boson, and Z boson.</p>
+              </div>
+              <div class="rounded-2xl border border-white/8 bg-slate-950/45 p-4">
+                <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Famous Discovery</p>
+                <p class="mt-2 font-display text-3xl text-white">2012</p>
+                <p class="mt-2 text-sm text-slate-300">Confirmation of the Higgs boson at CERN.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="editorial-card reveal rounded-3xl p-6">
+            <blockquote class="font-display text-2xl leading-10 text-white">
+              “The Standard Model is not the final story, but it is the clearest map we have of the quantum world.”
+            </blockquote>
+            <p class="mt-4 text-sm text-slate-400">A useful way to read this article is to think of the model as both a particle catalog and an interaction rulebook.</p>
+          </section>
+        </aside>
+
+        <article class="article-prose reveal max-w-none">
+          <section id="matter-framework">
+            <h2 class="font-display text-3xl text-white">Matter Particles And The Basic Framework</h2>
+            <p>
+              At its core, the <strong>Standard Model</strong> divides elementary particles into two major categories: fermions and bosons. Fermions are the particles that make up matter. They include quarks and leptons. Quarks combine in groups to create larger particles such as protons and neutrons, which then form atomic nuclei. Leptons include the electron, which orbits the nucleus, and neutrinos, which are nearly massless and interact only weakly with matter. Together, these matter particles create the structure of the visible universe.
+            </p>
+          </section>
+
+          <section id="three-generations" class="mt-10">
+            <h2 class="font-display text-3xl text-white">Three Generations Of Fermions</h2>
+            <p>
+              The model organizes fermions into three generations. The first generation contains the up quark, down quark, electron, and electron neutrino. These are the particles most common in ordinary matter. The second and third generations contain heavier versions of these particles, such as the charm quark, strange quark, muon, and tau. These heavier particles are usually unstable and decay into lighter ones. Even though they do not remain around for long under normal conditions, they are important because they reveal deeper symmetries in nature.
+            </p>
+            <div class="mt-6 grid gap-4 md:grid-cols-3">
+              <div class="editorial-card rounded-2xl p-5">
+                <p class="text-xs uppercase tracking-[0.25em] text-cyan-300">Generation I</p>
+                <p class="mt-3 text-sm text-slate-300">Up, down, electron, electron neutrino. This is the family most responsible for everyday matter.</p>
+              </div>
+              <div class="editorial-card rounded-2xl p-5">
+                <p class="text-xs uppercase tracking-[0.25em] text-cyan-300">Generation II</p>
+                <p class="mt-3 text-sm text-slate-300">Charm, strange, muon, muon neutrino. Heavier and less stable than the first generation.</p>
+              </div>
+              <div class="editorial-card rounded-2xl p-5">
+                <p class="text-xs uppercase tracking-[0.25em] text-cyan-300">Generation III</p>
+                <p class="mt-3 text-sm text-slate-300">Top, bottom, tau, tau neutrino. These particles expose extreme-energy physics.</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="force-carriers" class="mt-10">
+            <h2 class="font-display text-3xl text-white">Bosons And Force Carriers</h2>
+            <p>
+              Bosons form the second major category in the Standard Model. These particles carry forces. The photon carries the electromagnetic force, which governs electric charge and light. Gluons carry the strong force, binding quarks together inside protons and neutrons. The W and Z bosons carry the weak force, which is responsible for processes such as radioactive decay. Each force carrier helps explain how particles influence one another without needing to touch directly.
+            </p>
+            <div class="relative mt-8 space-y-6 pl-10">
+              <div class="timeline-line"></div>
+              <div class="reveal flex gap-4">
+                <span class="timeline-dot">1</span>
+                <div>
+                  <h3 class="font-display text-xl text-white">Photon</h3>
+                  <p class="mt-2 text-slate-300">The carrier of electromagnetism, central to light, chemistry, and electric charge interactions.</p>
+                </div>
+              </div>
+              <div class="reveal flex gap-4">
+                <span class="timeline-dot">2</span>
+                <div>
+                  <h3 class="font-display text-xl text-white">Gluon</h3>
+                  <p class="mt-2 text-slate-300">The particle that binds quarks into hadrons through the strong interaction.</p>
+                </div>
+              </div>
+              <div class="reveal flex gap-4">
+                <span class="timeline-dot">3</span>
+                <div>
+                  <h3 class="font-display text-xl text-white">W and Z Bosons</h3>
+                  <p class="mt-2 text-slate-300">The weak interaction carriers, important for radioactive decay and neutrino behavior.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="higgs-role" class="mt-10">
+            <h2 class="font-display text-3xl text-white">The Higgs Boson And Why It Matters</h2>
+            <p>
+              One of the most famous additions to the Standard Model is the Higgs boson. The Higgs field fills space, and when some particles interact with it, they acquire mass. The discovery of the Higgs boson at CERN in 2012 strongly supported this idea and completed the particle list predicted by the model. This was a major milestone in modern physics because it confirmed a mechanism that had been proposed decades earlier.
+            </p>
+            <div class="mt-6 rounded-3xl border border-amber-300/15 bg-amber-300/5 p-6">
+              <p class="text-xs uppercase tracking-[0.28em] text-amber-300">Why It Was Historic</p>
+              <p class="mt-3 text-slate-300">The Higgs discovery did not just add another particle to the list. It confirmed the deeper idea that empty space itself can shape the masses of fundamental particles.</p>
+            </div>
+          </section>
+
+          <section id="model-limits" class="mt-10">
+            <h2 class="font-display text-3xl text-white">Where The Standard Model Falls Short</h2>
+            <p>
+              Despite its power, the Standard Model is incomplete. It does not include gravity, does not explain dark matter, and cannot fully account for why the universe contains more matter than antimatter. Still, it remains the best tested description of subatomic physics available today. By classifying particles and explaining three of the four fundamental forces, the Standard Model acts as a roadmap for understanding both everyday matter and the exotic conditions found in particle accelerators and the early universe.
+            </p>
+            <div class="mt-8 space-y-4">
+              <details class="editorial-card rounded-2xl p-5">
+                <summary class="flex cursor-pointer items-center justify-between gap-4 font-display text-lg text-white">
+                  Why doesn't the Standard Model include gravity?
+                  <span class="text-cyan-300">+</span>
+                </summary>
+                <p class="mt-4 text-sm leading-7 text-slate-300">Gravity is described extremely well at large scales by general relativity, but physicists still do not have a fully accepted quantum theory of gravity that fits naturally into the Standard Model framework.</p>
+              </details>
+              <details class="editorial-card rounded-2xl p-5">
+                <summary class="flex cursor-pointer items-center justify-between gap-4 font-display text-lg text-white">
+                  Why is dark matter still a mystery?
+                  <span class="text-cyan-300">+</span>
+                </summary>
+                <p class="mt-4 text-sm leading-7 text-slate-300">Astronomical evidence strongly suggests that dark matter exists, but none of the known Standard Model particles fully match the properties needed to explain it.</p>
+              </details>
+              <details class="editorial-card rounded-2xl p-5">
+                <summary class="flex cursor-pointer items-center justify-between gap-4 font-display text-lg text-white">
+                  What keeps the Standard Model so valuable?
+                  <span class="text-cyan-300">+</span>
+                </summary>
+                <p class="mt-4 text-sm leading-7 text-slate-300">It remains one of the most precisely tested theories in science, accurately predicting a huge range of particle behavior in experiments across decades.</p>
+              </details>
+            </div>
+          </section>
+        </article>
+      </div>
+
+      <section class="mt-12 grid gap-6 md:grid-cols-3">
+        <article class="editorial-card reveal rounded-3xl p-6" data-tilt>
+          <p class="text-sm uppercase tracking-[0.28em] text-cyan-300">Key Insight</p>
+          <h3 class="mt-3 font-display text-2xl text-white">Matter Is Layered</h3>
+          <p class="mt-3 text-sm leading-7 text-slate-300">What looks solid and ordinary is built from a surprisingly small set of quantum ingredients arranged with enormous precision.</p>
+        </article>
+        <article class="editorial-card reveal rounded-3xl p-6" data-tilt>
+          <p class="text-sm uppercase tracking-[0.28em] text-cyan-300">Key Insight</p>
+          <h3 class="mt-3 font-display text-2xl text-white">Forces Are Exchanges</h3>
+          <p class="mt-3 text-sm leading-7 text-slate-300">Bosons help explain how particles influence one another, turning invisible interactions into a concrete physical language.</p>
+        </article>
+        <article class="editorial-card reveal rounded-3xl p-6" data-tilt>
+          <p class="text-sm uppercase tracking-[0.28em] text-cyan-300">Key Insight</p>
+          <h3 class="mt-3 font-display text-2xl text-white">Science Continues</h3>
+          <p class="mt-3 text-sm leading-7 text-slate-300">The theory is powerful, but its unanswered questions are exactly what make modern particle physics so active and exciting.</p>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 bg-slate-950/70">
+    <div class="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-8 text-sm text-slate-400 md:flex-row md:items-center md:justify-between lg:px-8">
+      <p>&copy; 2026 Particle Atlas. Educational content for learning the Standard Model.</p>
+      <div class="flex gap-5">
+        <a href="index.html" class="transition hover:text-cyan-300">Home</a>
+        <a href="quarks.html" class="transition hover:text-cyan-300">Quarks</a>
+        <a href="leptons.html" class="transition hover:text-cyan-300">Leptons</a>
+        <a href="bosons.html" class="transition hover:text-cyan-300">Bosons</a>
+        <a href="articles.html" class="transition hover:text-cyan-300">Articles</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/three-scenes.js"></script>
+  <script src="scripts/site-effects.js"></script>
+</body>
+</html>

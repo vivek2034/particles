@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subatomic Physics Particles | Quarks, Leptons, Bosons, and the Standard Model</title>
+  <meta name="description" content="Explore subatomic physics particles with an interactive website covering quarks, leptons, bosons, particle families, and the Standard Model.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="Particle Atlas">
+  <meta name="theme-color" content="#020617">
+  <meta name="application-name" content="Particle Atlas">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="canonical" href="https://vivek2034.github.io/particles/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Subatomic Physics Particles | Quarks, Leptons, Bosons, and the Standard Model">
+  <meta property="og:description" content="Discover the hidden architecture of subatomic particles through an interactive guide to quarks, leptons, bosons, and the Standard Model.">
+  <meta property="og:site_name" content="Particle Atlas">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://vivek2034.github.io/particles/">
+  <meta property="og:image" content="social-preview.svg">
+  <meta property="og:image:alt" content="Particle Atlas preview showing a futuristic subatomic physics theme">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Subatomic Physics Particles | Particle Atlas">
+  <meta name="twitter:description" content="Interactive learning experience about quarks, leptons, bosons, and the Standard Model.">
+  <meta name="twitter:image" content="social-preview.svg">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preload" as="image" href="social-preview.svg">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Subatomic Physics Particles",
+      "description": "An interactive educational page about quarks, leptons, bosons, and the Standard Model.",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "educationalUse": "instruction",
+      "learningResourceType": "Interactive Resource",
+      "about": [
+        { "@type": "Thing", "name": "Quarks" },
+        { "@type": "Thing", "name": "Leptons" },
+        { "@type": "Thing", "name": "Bosons" },
+        { "@type": "Thing", "name": "Standard Model" }
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "Particle Atlas"
+      }
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Particle Atlas",
+      "inLanguage": "en",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Particle Atlas"
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            space: "#050816",
+            nebula: "#0f172a",
+            plasma: "#67e8f9",
+            aurora: "#22d3ee",
+            flare: "#f59e0b"
+          },
+          fontFamily: {
+            display: ["Space Grotesk", "sans-serif"],
+            body: ["IBM Plex Sans", "sans-serif"]
+          },
+          boxShadow: {
+            glow: "0 0 45px rgba(103, 232, 249, 0.18)"
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at top, rgba(34, 211, 238, 0.12), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(245, 158, 11, 0.10), transparent 22%),
+        linear-gradient(180deg, #020617 0%, #050816 48%, #020617 100%);
+      cursor: none;
+    }
+
+    img,
+    canvas,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    * {
+      min-width: 0;
+    }
+
+    body.loaded .site-loader {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 500ms ease, visibility 500ms ease;
+    }
+
+    .glass-panel {
+      background: rgba(15, 23, 42, 0.72);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+    }
+
+    .section-grid {
+      background-image:
+        linear-gradient(rgba(103, 232, 249, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(103, 232, 249, 0.05) 1px, transparent 1px);
+      background-size: 36px 36px;
+    }
+
+    .visual-stage {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(103, 232, 249, 0.14);
+      background:
+        radial-gradient(circle at 50% 50%, rgba(34, 211, 238, 0.12), transparent 40%),
+        linear-gradient(180deg, rgba(15, 23, 42, 0.96), rgba(2, 6, 23, 0.96));
+    }
+
+    .visual-stage::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at center, transparent 0 35%, rgba(103, 232, 249, 0.04) 36%, transparent 45%),
+        linear-gradient(transparent 0%, rgba(255, 255, 255, 0.02) 100%);
+    }
+
+    .visual-stage::before {
+      content: "";
+      position: absolute;
+      inset: -30%;
+      pointer-events: none;
+      background: conic-gradient(from 90deg, transparent, rgba(103, 232, 249, 0.18), transparent 40%, rgba(245, 158, 11, 0.16), transparent 72%);
+      animation: haloSpin 12s linear infinite;
+      opacity: 0.65;
+    }
+
+    .hero-copy > * {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: revealUp 0.8s ease forwards;
+    }
+
+    .hero-copy > *:nth-child(2) {
+      animation-delay: 0.08s;
+    }
+
+    .hero-copy > *:nth-child(3) {
+      animation-delay: 0.16s;
+    }
+
+    .hero-copy > *:nth-child(4) {
+      animation-delay: 0.24s;
+    }
+
+    .hero-copy > *:nth-child(5) {
+      animation-delay: 0.32s;
+    }
+
+    .feature-float {
+      animation: floatCard 5s ease-in-out infinite;
+    }
+
+    .feature-float:nth-child(2) {
+      animation-delay: 0.9s;
+    }
+
+    .feature-float:nth-child(3) {
+      animation-delay: 1.8s;
+    }
+
+    .magnetic-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      border-color: rgba(103, 232, 249, 0.28);
+      box-shadow: 0 18px 50px rgba(8, 47, 73, 0.24);
+    }
+
+    .custom-cursor,
+    .custom-cursor-trail {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 60;
+      pointer-events: none;
+      border-radius: 9999px;
+      mix-blend-mode: screen;
+      transform: translate(-50%, -50%);
+    }
+
+    .custom-cursor {
+      width: 14px;
+      height: 14px;
+      background: radial-gradient(circle, rgba(255,255,255,0.95) 0%, rgba(103,232,249,0.9) 45%, rgba(103,232,249,0.08) 100%);
+      box-shadow: 0 0 22px rgba(103, 232, 249, 0.55);
+    }
+
+    .custom-cursor-trail {
+      width: 52px;
+      height: 52px;
+      border: 1px solid rgba(103, 232, 249, 0.35);
+      background: radial-gradient(circle, rgba(103,232,249,0.08) 0%, rgba(103,232,249,0.02) 55%, transparent 70%);
+      transition: width 180ms ease, height 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .cursor-active .custom-cursor-trail {
+      width: 82px;
+      height: 82px;
+      border-color: rgba(245, 158, 11, 0.4);
+      background: radial-gradient(circle, rgba(245,158,11,0.08) 0%, rgba(245,158,11,0.02) 55%, transparent 70%);
+    }
+
+    .site-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 70;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at center, rgba(34, 211, 238, 0.16), transparent 20%),
+        linear-gradient(180deg, #020617, #020617);
+    }
+
+    .loader-core {
+      position: relative;
+      width: 7rem;
+      height: 7rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(103, 232, 249, 0.18);
+      box-shadow: 0 0 40px rgba(103, 232, 249, 0.18);
+    }
+
+    .loader-core::before,
+    .loader-core::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 9999px;
+      border: 2px solid transparent;
+      border-top-color: rgba(103, 232, 249, 0.9);
+      animation: haloSpin 1.5s linear infinite;
+    }
+
+    .loader-core::after {
+      inset: 0.9rem;
+      border-top-color: rgba(245, 158, 11, 0.85);
+      animation-duration: 1s;
+      animation-direction: reverse;
+    }
+
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 65;
+      height: 3px;
+      width: 0;
+      background: linear-gradient(90deg, #67e8f9, #22d3ee, #f59e0b);
+      box-shadow: 0 0 18px rgba(103, 232, 249, 0.45);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px) scale(0.98);
+      transition: opacity 700ms ease, transform 700ms ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .stat-grid .glass-panel {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-grid .glass-panel::after {
+      content: "";
+      position: absolute;
+      inset: auto -10% -65% -10%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(103, 232, 249, 0.18), transparent 60%);
+      pointer-events: none;
+    }
+
+    .mobile-menu {
+      transition: opacity 220ms ease, transform 220ms ease, visibility 220ms ease;
+    }
+
+    .mobile-menu.is-open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    @keyframes revealUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floatCard {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes haloSpin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @media (pointer: coarse) {
+      body {
+        cursor: auto;
+      }
+
+      .custom-cursor,
+      .custom-cursor-trail {
+        display: none;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .desktop-nav {
+        display: none;
+      }
+
+      .mobile-menu {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-12px);
+      }
+    }
+
+    @media (min-width: 768px) {
+      .mobile-toggle,
+      .mobile-menu {
+        display: none;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero-copy > h1 {
+        font-size: 2.2rem;
+        line-height: 1.05;
+      }
+    }
+  </style>
+</head>
+<body class="font-body text-slate-100">
+  <div class="site-loader">
+    <div class="text-center">
+      <div class="loader-core mx-auto"></div>
+      <p class="mt-6 text-xs uppercase tracking-[0.4em] text-cyan-300">Initializing Particle Atlas</p>
+    </div>
+  </div>
+  <div class="progress-bar" id="progress-bar" aria-hidden="true"></div>
+  <div class="custom-cursor-trail" id="cursor-trail" aria-hidden="true"></div>
+  <div class="custom-cursor" id="cursor-dot" aria-hidden="true"></div>
+  <div class="relative min-h-screen overflow-hidden">
+    <div id="particles-js" class="absolute inset-0"></div>
+
+    <div class="relative z-10">
+      <header class="sticky top-0 z-20 border-b border-white/10 bg-slate-950/70 backdrop-blur">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8" aria-label="Primary navigation">
+          <a href="index.html" class="font-display text-xl font-bold tracking-wide text-plasma">Particle Atlas</a>
+          <div class="desktop-nav flex items-center gap-3 text-sm font-medium text-slate-200 md:gap-6">
+            <a href="index.html" class="transition hover:text-plasma">Home</a>
+            <a href="quarks.html" class="transition hover:text-plasma">Quarks</a>
+            <a href="leptons.html" class="transition hover:text-plasma">Leptons</a>
+            <a href="bosons.html" class="transition hover:text-plasma">Bosons</a>
+            <a href="#families" class="transition hover:text-plasma">Families</a>
+            <a href="#overview" class="transition hover:text-plasma">Overview</a>
+            <a href="articles.html" class="rounded-full border border-cyan-400/40 px-4 py-2 transition hover:border-cyan-300 hover:bg-cyan-400/10 hover:text-cyan-200">Articles</a>
+          </div>
+          <button class="mobile-toggle rounded-full border border-cyan-300/20 px-4 py-2 text-sm text-cyan-200" type="button" data-menu-toggle="mobile-menu-home" aria-expanded="false" aria-controls="mobile-menu-home">Menu</button>
+        </nav>
+        <div id="mobile-menu-home" class="mobile-menu border-t border-white/10 bg-slate-950/95 px-6 py-4">
+          <div class="flex flex-col gap-3 text-sm font-medium text-slate-200">
+            <a href="index.html" class="transition hover:text-plasma">Home</a>
+            <a href="quarks.html" class="transition hover:text-plasma">Quarks</a>
+            <a href="leptons.html" class="transition hover:text-plasma">Leptons</a>
+            <a href="bosons.html" class="transition hover:text-plasma">Bosons</a>
+            <a href="#families" class="transition hover:text-plasma">Families</a>
+            <a href="#overview" class="transition hover:text-plasma">Overview</a>
+            <a href="articles.html" class="transition hover:text-plasma">Articles</a>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="mx-auto flex min-h-[88vh] max-w-7xl items-center px-6 py-16 lg:px-8" data-parallax>
+          <div class="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+            <div class="hero-copy">
+              <p class="mb-4 inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-200">
+                Interactive Physics Learning Experience
+              </p>
+              <h1 class="font-display text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-7xl">
+                Discover the hidden architecture of
+                <span class="bg-gradient-to-r from-cyan-300 via-sky-400 to-amber-300 bg-clip-text text-transparent">subatomic particles</span>
+              </h1>
+              <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
+                Step into the quantum world where matter is built from quarks, leptons, and bosons. This responsive guide now pairs a dark particle field with a real-time 3D quantum core that reacts to your cursor.
+              </p>
+              <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+                <a href="#families" class="rounded-full bg-cyan-400 px-6 py-3 text-center font-semibold text-slate-950 transition hover:bg-cyan-300">
+                  Explore Particle Families
+                </a>
+                <a href="articles.html" class="rounded-full border border-slate-600 px-6 py-3 text-center font-semibold text-slate-100 transition hover:border-slate-400 hover:bg-white/5">
+                  Read the Standard Model Article
+                </a>
+              </div>
+              <div class="mt-8 grid gap-4 sm:grid-cols-3">
+                <div class="glass-panel magnetic-card feature-float rounded-2xl p-4">
+                  <p class="text-sm uppercase tracking-[0.25em] text-cyan-300">3D Core</p>
+                  <p class="mt-2 text-sm text-slate-300">A layered quantum-inspired scene rendered with Three.js.</p>
+                </div>
+                <div class="glass-panel magnetic-card feature-float rounded-2xl p-4">
+                  <p class="text-sm uppercase tracking-[0.25em] text-cyan-300">Live Focus</p>
+                  <p class="mt-2 text-sm text-slate-300">Switch among quarks, leptons, and bosons to change the scene behavior.</p>
+                </div>
+                <div class="glass-panel magnetic-card feature-float rounded-2xl p-4">
+                  <p class="text-sm uppercase tracking-[0.25em] text-cyan-300">Reactive Motion</p>
+                  <p class="mt-2 text-sm text-slate-300">Move your cursor to tilt the visualization and shift the energy field.</p>
+                </div>
+              </div>
+            </div>
+
+            <aside class="glass-panel rounded-3xl p-6 shadow-glow reveal" data-tilt>
+              <div class="rounded-2xl border border-cyan-300/15 bg-slate-900/60 p-6">
+                <div class="flex items-center justify-between gap-4">
+                  <p class="text-sm uppercase tracking-[0.3em] text-cyan-300">3D Particle Lab</p>
+                  <span class="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-xs text-cyan-200">Move your cursor</span>
+                </div>
+                <div id="three-hero-scene" class="visual-stage mt-6 h-80 rounded-2xl"></div>
+                <div class="mt-5 flex flex-wrap gap-3">
+                  <button type="button" data-particle-focus="quarks" class="rounded-full border border-amber-300/30 bg-amber-300/10 px-4 py-2 text-sm font-medium text-amber-200 transition hover:bg-amber-300/20">Focus: Quarks</button>
+                  <button type="button" data-particle-focus="leptons" class="rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-sm font-medium text-cyan-200 transition hover:bg-cyan-300/20">Focus: Leptons</button>
+                  <button type="button" data-particle-focus="bosons" class="rounded-full border border-emerald-300/30 bg-emerald-300/10 px-4 py-2 text-sm font-medium text-emerald-200 transition hover:bg-emerald-300/20">Focus: Bosons</button>
+                </div>
+                <p id="focus-description" class="mt-4 text-sm leading-7 text-slate-300">
+                  The 3D core responds to your cursor and highlights how different particle families contribute to matter and forces.
+                </p>
+                <div class="mt-6 space-y-5">
+                  <div class="flex items-start justify-between gap-4 border-b border-white/10 pb-4">
+                    <div>
+                      <h2 class="font-display text-xl text-white">Quarks</h2>
+                      <p class="mt-1 text-sm text-slate-400">Combine to form protons and neutrons.</p>
+                    </div>
+                    <span class="rounded-full bg-amber-400/15 px-3 py-1 text-sm text-amber-300">6 flavors</span>
+                  </div>
+                  <div class="flex items-start justify-between gap-4 border-b border-white/10 pb-4">
+                    <div>
+                      <h2 class="font-display text-xl text-white">Leptons</h2>
+                      <p class="mt-1 text-sm text-slate-400">Include electrons and elusive neutrinos.</p>
+                    </div>
+                    <span class="rounded-full bg-cyan-400/15 px-3 py-1 text-sm text-cyan-300">6 types</span>
+                  </div>
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <h2 class="font-display text-xl text-white">Bosons</h2>
+                      <p class="mt-1 text-sm text-slate-400">Carry the fundamental forces of nature.</p>
+                    </div>
+                    <span class="rounded-full bg-emerald-400/15 px-3 py-1 text-sm text-emerald-300">Force carriers</span>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-6 pb-4 lg:px-8">
+          <div class="stat-grid grid gap-6 md:grid-cols-3">
+            <article class="glass-panel magnetic-card reveal rounded-3xl p-6 text-center" data-tilt>
+              <p class="font-display text-4xl text-white"><span data-counter="17">0</span>+</p>
+              <p class="mt-2 text-sm uppercase tracking-[0.3em] text-cyan-300">Model Entities</p>
+              <p class="mt-3 text-sm text-slate-300">Fundamental particles and interactions presented through immersive visual layers.</p>
+            </article>
+            <article class="glass-panel magnetic-card reveal rounded-3xl p-6 text-center" data-tilt>
+              <p class="font-display text-4xl text-white"><span data-counter="3">0</span>D</p>
+              <p class="mt-2 text-sm uppercase tracking-[0.3em] text-cyan-300">Motion Space</p>
+              <p class="mt-3 text-sm text-slate-300">Interactive scenes respond to pointer movement, focus shifts, and depth-based animation.</p>
+            </article>
+            <article class="glass-panel magnetic-card reveal rounded-3xl p-6 text-center" data-tilt>
+              <p class="font-display text-4xl text-white"><span data-counter="500">0</span>+</p>
+              <p class="mt-2 text-sm uppercase tracking-[0.3em] text-cyan-300">Words of Science</p>
+              <p class="mt-3 text-sm text-slate-300">The companion article turns advanced visuals into accessible educational context.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="overview" class="section-grid border-y border-white/10 bg-slate-950/40 reveal">
+          <div class="mx-auto grid max-w-7xl gap-6 px-6 py-16 lg:grid-cols-3 lg:px-8">
+            <article class="glass-panel magnetic-card rounded-3xl p-6" data-tilt>
+              <h2 class="font-display text-2xl text-white">Matter</h2>
+              <p class="mt-3 text-slate-300">Ordinary matter emerges from combinations of quarks and leptons, arranged into stable structures such as atoms and nuclei.</p>
+            </article>
+            <article class="glass-panel magnetic-card rounded-3xl p-6" data-tilt>
+              <h2 class="font-display text-2xl text-white">Forces</h2>
+              <p class="mt-3 text-slate-300">Bosons mediate interactions, allowing particles to exchange energy, bind together, or transform into different states.</p>
+            </article>
+            <article class="glass-panel magnetic-card rounded-3xl p-6" data-tilt>
+              <h2 class="font-display text-2xl text-white">Symmetry</h2>
+              <p class="mt-3 text-slate-300">The Standard Model organizes particles through elegant mathematical symmetries that help predict their behavior.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="families" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+          <div class="max-w-3xl reveal">
+            <p class="text-sm uppercase tracking-[0.3em] text-cyan-300">Particle Families</p>
+            <h2 class="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">Three essential groups in the quantum zoo</h2>
+            <p class="mt-4 text-lg text-slate-300">Each family plays a distinct role in how the universe stores mass, carries charge, and transmits forces.</p>
+          </div>
+
+          <div class="mt-12 grid gap-8 lg:grid-cols-3">
+            <article class="glass-panel magnetic-card reveal overflow-hidden rounded-3xl transition hover:-translate-y-1 hover:border-cyan-300/25" data-tilt>
+              <img src="https://via.placeholder.com/720x420/0f172a/67e8f9?text=Quarks+Placeholder" alt="Illustrative placeholder image representing quarks in particle physics" loading="lazy" class="h-56 w-full object-cover">
+              <div class="p-6">
+                <h3 class="font-display text-2xl text-white">Quarks</h3>
+                <p class="mt-3 text-slate-300">Quarks are elementary particles that come in six flavors: up, down, charm, strange, top, and bottom. They are never observed alone because the strong interaction confines them into composite particles such as protons, neutrons, and mesons.</p>
+                <p class="mt-4 text-sm text-cyan-200">Key idea: quarks build hadrons and help define the structure of atomic nuclei.</p>
+                <a href="quarks.html" class="mt-5 inline-flex text-sm font-semibold text-cyan-300 transition hover:text-cyan-200">Read the quarks guide</a>
+              </div>
+            </article>
+
+            <article class="glass-panel magnetic-card reveal overflow-hidden rounded-3xl transition hover:-translate-y-1 hover:border-cyan-300/25" data-tilt>
+              <img src="https://via.placeholder.com/720x420/111827/93c5fd?text=Leptons+Placeholder" alt="Illustrative placeholder image representing leptons in particle physics" loading="lazy" class="h-56 w-full object-cover">
+              <div class="p-6">
+                <h3 class="font-display text-2xl text-white">Leptons</h3>
+                <p class="mt-3 text-slate-300">Leptons include the electron, muon, tau, and their corresponding neutrinos. Unlike quarks, leptons do not feel the strong force. Electrons are central to chemistry, while neutrinos are famous for passing through matter with very little interaction.</p>
+                <p class="mt-4 text-sm text-cyan-200">Key idea: leptons shape atomic behavior and reveal weak-interaction physics.</p>
+                <a href="leptons.html" class="mt-5 inline-flex text-sm font-semibold text-cyan-300 transition hover:text-cyan-200">Read the leptons guide</a>
+              </div>
+            </article>
+
+            <article class="glass-panel magnetic-card reveal overflow-hidden rounded-3xl transition hover:-translate-y-1 hover:border-cyan-300/25" data-tilt>
+              <img src="https://via.placeholder.com/720x420/1e1b4b/fde68a?text=Bosons+Placeholder" alt="Illustrative placeholder image representing bosons and force carriers" loading="lazy" class="h-56 w-full object-cover">
+              <div class="p-6">
+                <h3 class="font-display text-2xl text-white">Bosons</h3>
+                <p class="mt-3 text-slate-300">Bosons are force-carrying particles that mediate interactions. Photons transmit electromagnetism, gluons bind quarks through the strong force, and W and Z bosons govern the weak force. The Higgs boson is linked to the mechanism that gives many particles mass.</p>
+                <p class="mt-4 text-sm text-cyan-200">Key idea: bosons are the messengers that let particles influence one another.</p>
+                <a href="bosons.html" class="mt-5 inline-flex text-sm font-semibold text-cyan-300 transition hover:text-cyan-200">Read the bosons guide</a>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="border-t border-white/10 bg-slate-950/70">
+        <div class="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-8 text-sm text-slate-400 md:flex-row md:items-center md:justify-between lg:px-8">
+          <p>&copy; 2026 Particle Atlas. Built with HTML5, Tailwind CSS, particles.js, and Three.js.</p>
+          <div class="flex gap-5">
+            <a href="index.html" class="transition hover:text-cyan-300">Home</a>
+            <a href="quarks.html" class="transition hover:text-cyan-300">Quarks</a>
+            <a href="leptons.html" class="transition hover:text-cyan-300">Leptons</a>
+            <a href="bosons.html" class="transition hover:text-cyan-300">Bosons</a>
+            <a href="articles.html" class="transition hover:text-cyan-300">Articles</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script src="scripts/particles-config.js"></script>
+  <script src="scripts/three-scenes.js"></script>
+  <script src="scripts/site-effects.js"></script>
+</body>
+</html>
